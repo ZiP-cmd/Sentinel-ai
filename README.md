@@ -170,21 +170,19 @@ http://127.0.0.1:8000/docs
 - The reported held-out evaluation is historical
   and must not be interpreted as live production
   performance.
-```
+
 
 ## Dashboard Screenshots
 
 ### Model Performance
 
-Evaluation on the chronological validation dataset using a
-fixed classification threshold of 0.50.
+Evaluation on the chronological validation dataset using a fixed classification threshold of 0.50.
 
 ![Model performance](docs/screenshots/model_performance.png)
 
 ### Investigation Budget Analysis
 
-Comparison of precision and recall under different
-investigation capacities.
+Comparison of precision and recall under different investigation capacities.
 
 ![Investigation budget](docs/screenshots/investigation_budget.png)
 
@@ -192,8 +190,7 @@ investigation capacities.
 
 **Unsupported claim filtered**
 
-A simulated unsupported fraud accusation is removed,
-and a safe investigator-facing summary is reconstructed.
+A simulated unsupported fraud accusation is removed, and a safe investigator-facing summary is reconstructed.
 
 ![Unsupported claim filtered](docs/screenshots/unsupported_claim_filtered.png)
 
