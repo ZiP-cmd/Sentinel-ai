@@ -6,6 +6,16 @@ Sentinel AI is a Python-based machine learning portfolio project that identifies
 
 The system combines fraud classification, a FastAPI prediction service, an interactive Streamlit dashboard, structured evidence validation, safe investigation summaries, and audit-access controls.
 
+## System Architecture
+
+Sentinel AI separates fraud scoring, investigation evidence
+validation, response construction, and audit authorization
+into distinct components.
+
+See the [System Architecture Diagram](docs/ARCHITECTURE.md)
+for an overview of the data flow and security boundaries.
+
+
 ## Features
 
 - Credit card fraud detection using class-weighted logistic regression.
