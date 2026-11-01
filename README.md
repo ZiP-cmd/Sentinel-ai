@@ -64,23 +64,113 @@ These are educational security controls rather than a production authentication 
 
 Python, pandas, NumPy, scikit-learn, joblib, FastAPI, Uvicorn, Streamlit, matplotlib, and pytest.
 
-## Setup
 
-The project was developed in a Windows Python 3.15 environment.
+## Installation and Setup
 
-Install dependencies:
+### 1. Clone the repository
+
+```powershell
+git clone https://github.com/ZiP-cmd/Sentinel-ai.git
+cd Sentinel-ai
+```
+
+### 2. Create a virtual environment
+
+This project was developed using Python 3.15.
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+### 3. Install dependencies
 
 ```powershell
 python -m pip install -r requirements.txt
 ```
 
-Run tests:
+### 4. Obtain the dataset
+
+Sentinel AI uses the historical Credit Card Fraud
+Detection dataset containing 284,807 transactions.
+
+Dataset:
+https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+
+Download `creditcard.csv` and place it at:
+
+`data/creditcard.csv`
+
+The dataset is excluded from Git.
+
+### 5. Verify the dataset
+
+```powershell
+python src/prepare_data.py
+```
+
+This checks the expected dataset structure,
+chronological split statistics, and duplicate
+overlap between partitions.
+
+### 6. Train and save the model
+
+```powershell
+python src/save_model.py
+```
+
+This trains a class-weighted logistic regression
+pipeline on the chronological training partition.
+
+The new artifact is saved to:
+
+`models/sentinel_fraud_model.joblib`
+
+Retraining is not guaranteed to reproduce the
+original frozen artifact byte-for-byte.
+
+### 7. Run the automated tests
 
 ```powershell
 python -m pytest tests/ -v
 ```
 
-The large source dataset and serialized model files are excluded from Git. A fresh checkout will require the dataset and a reproducible model-training process before model-dependent functionality can run.
+The project had 81 passing tests at the latest
+documented checkpoint.
+
+### 8. Launch the dashboard
+
+```powershell
+python -m streamlit run src/dashboard.py
+```
+
+### 9. Launch the API
+
+Open another terminal with the virtual environment
+activated:
+
+```powershell
+python -m uvicorn api:app --app-dir src --reload
+```
+
+API documentation should be available at:
+
+http://127.0.0.1:8000/docs
+
+## Reproducibility Limitations
+
+- The original dataset and trained model are not
+  included in the repository.
+- The requirements file records the original
+  development environment.
+- A fresh installation has not yet been
+  independently verified.
+- Recreated model artifacts may differ from the
+  frozen artifact used for final evaluation.
+- The reported held-out evaluation is historical
+  and must not be interpreted as live production
+  performance.
+```
 
 ## Project Status
 
