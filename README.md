@@ -172,6 +172,37 @@ http://127.0.0.1:8000/docs
   performance.
 ```
 
+## Dashboard Screenshots
+
+### Model Performance
+
+Evaluation on the chronological validation dataset using a
+fixed classification threshold of 0.50.
+
+![Model performance](docs/screenshots/model_performance.png)
+
+### Investigation Budget Analysis
+
+Comparison of precision and recall under different
+investigation capacities.
+
+![Investigation budget](docs/screenshots/investigation_budget.png)
+
+### AI Investigation Safety
+
+**Unsupported claim filtered**
+
+A simulated unsupported fraud accusation is removed,
+and a safe investigator-facing summary is reconstructed.
+
+![Unsupported claim filtered](docs/screenshots/unsupported_claim_filtered.png)
+
+**Verified claims approved**
+
+Supported structured claims are accepted without rejection.
+
+![Verified claims approved](docs/screenshots/verified_claim_approved.png)
+
 ## Project Status
 
 Sentinel AI is a portfolio and educational system. It has not been validated for production financial decisions, and it should not be used to make autonomous fraud accusations or account-suspension decisions.
