@@ -1,5 +1,8 @@
 # Sentinel AI
 
+[![Sentinel AI Tests](https://github.com/ZiP-cmd/Sentinel-ai/actions/workflows/tests.yml/badge.svg)](https://github.com/ZiP-cmd/Sentinel-ai/actions/workflows/tests.yml)
+
+
 **Fraud Detection, Investigation Prioritization, and Evidence-Grounded AI Safety**
 
 Sentinel AI is a Python-based machine learning portfolio project that identifies potentially fraudulent credit card transactions, evaluates investigation workloads, and demonstrates techniques for validating AI-generated investigation claims.
