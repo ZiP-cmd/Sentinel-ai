@@ -12,7 +12,10 @@ from sklearn.preprocessing import StandardScaler
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "models" / "sentinel_fraud_model.joblib"
-
+git add .github/scripts/create_test_model.py
+git diff --cached --check
+git commit -m "Fix synthetic model feature-name warnings"
+git push origin main
 FEATURES = (
     ["Time"]
     + [f"V{i}" for i in range(1, 29)]
@@ -24,7 +27,7 @@ def main():
     rng = np.random.default_rng(42)
 
     # Synthetic examples; no real transaction records.
-   
+
 X = pd.DataFrame(
     rng.normal(size=(40, len(FEATURES))),
     columns=FEATURES,
