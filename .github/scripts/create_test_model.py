@@ -2,7 +2,7 @@
 """Generate a synthetic model for CI testing only."""
 
 from pathlib import Path
-
+import pandas as pd
 import joblib
 import numpy as np
 from sklearn.linear_model import LogisticRegression
@@ -24,7 +24,12 @@ def main():
     rng = np.random.default_rng(42)
 
     # Synthetic examples; no real transaction records.
-    X = rng.normal(size=(40, len(FEATURES)))
+   
+X = pd.DataFrame(
+    rng.normal(size=(40, len(FEATURES))),
+    columns=FEATURES,
+)
+
     y = np.array([0, 1] * 20)
 
     model = Pipeline([
